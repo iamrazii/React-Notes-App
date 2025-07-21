@@ -9,16 +9,16 @@ const Pastes = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  const filteredData = datalist.filter((paste) =>
-    paste.title.toLowerCase().includes(searchdata.toLowerCase())
-  )
+const filteredData = datalist.filter((paste) =>
+  paste?.title?.toLowerCase().includes(searchdata.toLowerCase())
+)
 
   const handleDelete = (id) => {
     dispatch(removePaste(id))
   }
 
   const handleEdit = (id) => {
-    navigate(`/?notesid=${id}`)
+    navigate(`/?noteid=${id}`)
   }
 
   const handleCopy = (content) => {
