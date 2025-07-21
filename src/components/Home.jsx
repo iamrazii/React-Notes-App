@@ -8,12 +8,13 @@ const Home = () => {
     const [value, SetValue] = useState('')
     const [searchparams, SetSearchParams] = useSearchParams()
 
-    const pasteid = searchparams.get('pasteid')
+    const pasteid = searchparams.get('noteid')
     const dispatcher = useDispatch()
     const allpastes = useSelector((item) => item.paste.pastes)
 
 
     useEffect(() => {
+        console.log(pasteid)
         if (pasteid) {
             const mypaste = allpastes.find((p) => p._id === pasteid)
             SetTitle(mypaste.title);
